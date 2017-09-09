@@ -15,6 +15,7 @@ and open the template in the editor.
         
         $students = array();
         
+        // Adding three new students to students array
         $first = new Student();
         $first->surname = "Doe";
         $first->first_name = "John";
@@ -36,6 +37,18 @@ and open the template in the editor.
         $second->add_grade(50);
         $students['a456'] = $second;
         
+        $third = new Student();
+        $third->surname = "Lee";
+        $third->first_name = "Sean";
+        $third->add_email('school','slee809@bcit.ca');
+        $third->add_grade(80);
+        $third->add_grade(90);
+        $third->add_grade(85);
+        $students['s789'] = $third;
+        
+        ksort($students); // one of the many sort functions
+        
+        // echo each student to string 
         foreach ($students as $student)
             echo $student->toString();
         ?>
